@@ -12,7 +12,7 @@
 
 	nla.constant('defaultSettings', {
 		alphabetcolors : ["#5A8770", "#B2B7BB", "#6FA9AB", "#F5AF29", "#0088B9", "#F18636", "#D93A37", "#A6B12E", "#5C9BBC", "#F5888D", "#9A89B5", "#407887", "#9A89B5", "#5A8770", "#D33F33", "#A2B01F", "#F0B126", "#0087BF", "#F18636", "#0087BF", "#B2B7BB", "#72ACAE", "#9C8AB4", "#5A8770", "#EEB424", "#407887"],
-		textColor : '#ffffff',
+		textColor : '#FFD400',
 		defaultBorder : 'border:5px solid white',
 		fontsize : 30, // unit in pixels
 		height : 50, // unit in pixels
@@ -49,14 +49,14 @@
 						var c = params.data.substr(0, params.charCount).toUpperCase();
 						var cobj = getCharacterObject(c, params.textColor, params.fontFamily, params.fontWeight, params.fontsize);
 						var colorIndex = '';
-						var color = '';
+						var color = '#00416B';
 
-						if (c.charCodeAt(0) < 65) {
-							color = getRandomColors();
-						} else {
-							colorIndex = Math.floor((c.charCodeAt(0) - 65) % defaultSettings.alphabetcolors.length);
-							color = defaultSettings.alphabetcolors[colorIndex];
-						}
+						// if (c.charCodeAt(0) < 65) {
+						// 	color = getRandomColors();
+						// } else {
+						// 	colorIndex = Math.floor((c.charCodeAt(0) - 65) % defaultSettings.alphabetcolors.length);
+						// 	color = defaultSettings.alphabetcolors[colorIndex];
+						// }
 
 						var svg = getImgTag(params.width, params.height, color);
 						svg.append(cobj);
